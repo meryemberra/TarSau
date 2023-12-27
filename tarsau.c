@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (strcmp(argv[1], "-b") == 0) {
-        // Archive operation
+       
         const char *outputFileName = (argc > 3) ? argv[argc - 1] : "a.sau";
         mergeFiles(outputFileName, argv + 2, argc - 4);
         printf("The files have been merged.\n");

@@ -18,14 +18,14 @@ struct FileInfo {
     size_t size;
 };
 
-// Function to check if a file is a text file
+
 int isTextFile(const char *fileName) {
     // TODO: Implement this function to check if the file is a text file
     // You may use file extension or inspect file contents for this check
     return 1; // Placeholder, return 1 for simplicity
 }
 
-// Function to merge text files into an archive
+
 void mergeFiles(const char *outputFileName, const char *fileNames[], int fileCount) {
     FILE *outputFile = fopen(outputFileName, "wb");
     if (outputFile == NULL) {
@@ -51,21 +51,21 @@ void mergeFiles(const char *outputFileName, const char *fileNames[], int fileCou
             exit(EXIT_FAILURE);
         }
 
-        // Get file permissions
+   
         struct stat fileStat;
         stat(fileNames[i], &fileStat);
         sprintf(orgSectionRecord.permissions, "%o", fileStat.st_mode & (S_IRWXU | S_IRWXG | S_IRWXO));
 
-        // Get file size
+       
         fseek(inputFile, 0, SEEK_END);
         orgSectionRecord.size = ftell(inputFile);
         fseek(inputFile, 0, SEEK_SET);
 
-        // Write the organization section record
+        
         fwrite(&orgSectionRecord, sizeof(struct FileInfo), 1, outputFile);
         orgSectionSize += sizeof(struct FileInfo);
 
-        // Write the file contents
+     
         char buffer[MAX_FILE_SIZE];
         size_t bytesRead;
         while ((bytesRead = fread(buffer, 1, sizeof(buffer), inputFile)) > 0) {

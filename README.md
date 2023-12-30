@@ -22,14 +22,14 @@ make
 
 ## Operations
 
-## -b: Merge Files
+### -b: Merge Files
 
 Merge multiple text files into a single archive.
 Example
 
 ./tarsau -b file1.txt file2.txt -o merged.sau
 
-## -a: Extract Archive
+### -a: Extract Archive
 
 Extract files from a previously created archive.
 Example

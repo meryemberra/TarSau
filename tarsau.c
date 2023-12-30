@@ -44,7 +44,7 @@ int selectTransaction(int argc, char *argv[]){
         printf("       %s -a archive_file_name directory_name\n", argv[0]);
         return EXIT_FAILURE;
     }
-    // for -b operations
+    //For -b operations
     else if (strcmp(argv[1], "-b") == 0)
     {
         char *outputFileName = (strcmp(argv[argc - 2], "-o") == 0) ? argv[argc - 1] : "a.sau";

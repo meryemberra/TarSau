@@ -11,7 +11,6 @@
 #define MAX_FILES 32
 #define MAX_TOTAL_SIZE 200 * 1024 * 1024 // 200 MB
 
-
 typedef struct
 {
     char fileName[100];
@@ -22,6 +21,14 @@ typedef struct
 
 
 char FullContent[100][200][200]; //created array for content storage
+
+//The definitions of the functions used in the project.
+int selectTransaction(int argc, char *argv[]);
+void getFileInfos(char *fileNameArray[], int fileNameCount, const char *outputFileName);
+void writeToArchive(FileData *fileInfos, const char *outputFileName, int fileNameCount, off_t totalSize);
+int isTextFile(const char *fileName);
+int findContents(FileData *fileInfos, char *archiveFileName, int fileCount);
+void extractArchiveFile(char *archiveFileName, char *outputFolderName);
 
 int main(int argc, char *argv[])
 {
@@ -224,7 +231,7 @@ int findContents(FileData *fileInfos, char *archiveFileName, int fileCount) {
     }
 
     char line[200]; // Temporary storage for each line
-    int lineCount = 0;
+   
 
     // Skip lines until (fileCount + 1) line
     for (int i = 0; i < (fileCount + 1); i++) {

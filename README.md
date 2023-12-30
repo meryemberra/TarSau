@@ -9,6 +9,8 @@ Tarsau is a command-line archive program written in C language for Linux (or Uni
 - [Operations](#operations)
     - [-b Merge Files](#-b-merge-files)
     - [-a Extract Archive](#-a-extract-archive)
+- [Contributors](#Contributors)
+  
 ## Usage
 
 ./tarsau -b input_files -o output_file
@@ -25,13 +27,22 @@ make
 ### -b: Merge Files
 
 Merge multiple text files into a single archive.
-Example
 
-./tarsau -b file1.txt file2.txt -o merged.sau
+#### Creating an Archive
+
+To create an archive, use the -b option followed by input file names and specify the output archive file name with -o:
+
+tarsau –b t1 t2 t3 t4.txt t5.dat –o s1.sau
 
 ### -a: Extract Archive
-
 Extract files from a previously created archive.
-Example
+#### Extracting from an Archive
+
+To extract files from an existing archive, use the -a option followed by the archive file name and the directory name:
 
 ./tarsau -a archive.sau [extract_directory]
+
+## Contributors
+
+- [Ayşe Nur Yılmaz](https://github.com/aysenrr) 
+- [Meryem Berra Avşar](https://github.com/meryemberra) 

@@ -55,7 +55,7 @@ int findContents(FileInfo *fileInfos, char *archiveFileName, int fileCount) {
                 lineTotalSize += strlen(line);
                 lineNumber++;
             } else {
-                break; //end of the file
+                break; 
             }
         }
 
@@ -354,4 +354,4 @@ int main(int argc, char *argv[])
 {
    chooseParameter(argc,argv);
     return EXIT_SUCCESS;
-}apooseParameter 
+}
